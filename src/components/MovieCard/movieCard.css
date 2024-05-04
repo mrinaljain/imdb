@@ -27,6 +27,10 @@
 .movie-details h2 {
    margin: 0 0 10px 0;
 }
+.movie-details p {
+   max-height: 100px;
+   overflow-y: auto;
+}
 
 .rating {
    color: #f1c40f;

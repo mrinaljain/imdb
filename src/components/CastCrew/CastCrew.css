@@ -1,5 +1,5 @@
-.moviesSlider{
+.cardSection{
    display: flex;
    flex-wrap: wrap;
-   overflow-x: scroll;
+   gap: 20;
 }
