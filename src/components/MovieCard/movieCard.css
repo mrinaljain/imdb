@@ -6,8 +6,8 @@
    border-radius: 5px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    background-color: #fff;
-   max-width: 400px;
-   min-width: 300px;
+   max-width: 300px;
+   min-width: 280px;
    margin: 0 auto;
 }
 
@@ -43,18 +43,3 @@
    margin-right: 5px;
 }
 
-.play-trailer-button {
-   background-color: #3498db;
-   /* Button color */
-   color: #fff;
-   border: none;
-   padding: 10px 20px;
-   border-radius: 5px;
-   cursor: pointer;
-   margin-top: auto;
-}
-
-.play-trailer-button:hover {
-   background-color: #2980b9;
-   /* Button hover color */
-}

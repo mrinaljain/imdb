@@ -17,8 +17,8 @@ function Details() {
    return (
       <>
          {movie && <Banner movie={movie} />}
-         {movie && <CastCrew name={"Cast"} cast={movie["credits"]["cast"]} />}
-         {movie && <CastCrew name={"Crew"} crew={movie["credits"]["crew"]} />}
+         {movie && <CastCrew key={1} name={"Cast"} cast={movie["credits"]["cast"]} />}
+         {movie && <CastCrew key={2}  name={"Crew"} crew={movie["credits"]["crew"]} />}
       </>
    )
 }

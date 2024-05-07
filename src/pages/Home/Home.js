@@ -1,14 +1,12 @@
 import React from "react"
 import TrendingMovies from "../../components/TrendingMovies/TrendingMovies";
-
-import Navbar from "../../components/Navbar/Navbar"
 import Banner from "../../components/Banner/Banner"
 
 
 
 function Home() {
    const apikey = "525fd47539a462f413272290cd11fd6d"
-   const baseUrl = "https://api.themoviedb.org/3/trending/all/day?language=en-US&api_key=" + apikey;
+   const baseUrl = "https://api.themoviedb.org/3/trending/all/day?append_to_response=Videos&language=en-US&api_key=" + apikey;
    const [movies, setMovies] = React.useState([])
    let randomNumber = 0;
    React.useEffect(function () {
@@ -20,12 +18,21 @@ function Home() {
          });
    }, []);
 
+   if (movies.length == 0) {
+      return (<>
+         <center>
+
+            Loading.....
+         </center>
+      </>
+
+      )
+   }
    return (
-      <div >
-         <Navbar />
+      <>
          {movies.length > 0 && <Banner movie={movies[randomNumber]} />}
          <TrendingMovies movies={movies} />
-      </div>
+      </>
    );
 }
 

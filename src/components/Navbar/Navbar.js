@@ -1,7 +1,14 @@
 import React from "react"
-export default function Navbar(params) {
+import { Link } from "react-router-dom"
+import "./Navbar.css"
+export default function Navbar() {
    return (
-      <nav> IMDB
-      </nav>
+      <header className="header">
+         <Link to="/"><h3> #IMDB</h3></Link>
+         <nav className="headerNav"> 
+            <Link to="/">Movies</Link>
+            <Link to="/watchlist"> WatchList</Link>
+         </nav>
+      </header>
    )
 }

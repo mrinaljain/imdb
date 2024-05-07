@@ -21,3 +21,17 @@ position: relative;
    background-repeat: no-repeat;
    background-size: cover;
 }
+.play-trailer-button {
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: auto;
+}
+
+.play-trailer-button:hover {
+   background-color: #2980b9;
+   /* Button hover color */
+}
