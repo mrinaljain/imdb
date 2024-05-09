@@ -3,7 +3,20 @@ import "./MovieCard.css"
 import { Link } from "react-router-dom";
 
 export default function MovieCard(props) {
-   const { id, title, release_date, media_type, poster_path } = props.movie;
+   const { id, title, poster_path } = props.movie;
+   // let isFav = false;
+   // console.log(props.watchList);
+   function isFav() {
+      // check if current movie id is present in wishlist
+      // return true if present else false;
+      for (let i = 0; i < props.watchList.length; i++) {
+         const movie = props.watchList[i];
+         if (movie.id === id) {
+            return true;
+         }
+      }
+      return false;
+   }
    const poster_image = `https://image.tmdb.org/t/p/original${poster_path}`
    return (
       <div className="movie-card">
@@ -11,6 +24,8 @@ export default function MovieCard(props) {
             <div className="movie-details">
                <h2>{title}</h2>
             <Link to={`/details/${id}`}><button>More Details</button></Link>
+            {isFav() ? <button>Remove from WatchList</button> 
+               : <button onClick={() => props.handelAddToWatchList(props.movie)}>Add to WatchList</button>}
             </div>
       </div>
    );

@@ -1,0 +1,15 @@
+.watchlistMovieCard{
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: start;
+   align-items: center;
+   flex-direction: row;
+}
+.watchlistMovieCard .poster_image {
+ width: 300px;
+ height: 150px;
+ background-size: cover;
+ background-repeat: no-repeat;
+ border-radius: 4px;
+ border: solid 1px grey;
+}

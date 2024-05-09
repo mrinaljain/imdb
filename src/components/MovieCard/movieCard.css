@@ -32,14 +32,4 @@
    overflow-y: auto;
 }
 
-.rating {
-   color: #f1c40f;
-   /* Star color */
-   display: flex;
-   margin-bottom: 10px;
-}
-
-.rating i {
-   margin-right: 5px;
-}
 
