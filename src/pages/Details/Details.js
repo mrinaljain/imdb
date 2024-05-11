@@ -12,7 +12,7 @@ function Details() {
       fetch(movieDetail)
          .then(response => response.json())
          .then(data => setMovie(data));
-   }, [params.movieId]);
+   }, [movieDetail]);
       
    return (
       <>

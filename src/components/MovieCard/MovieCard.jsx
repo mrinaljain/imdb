@@ -5,14 +5,14 @@ import MovieContext from "../../context/MovieContext";
 
 export default function MovieCard(props) {
    const { id, title, poster_path } = props.movie;
-   const {handelAddToWatchList, deleteFromWatchList } = React.useContext(MovieContext);
+   const { watchList, handelAddToWatchList, deleteFromWatchList } = React.useContext(MovieContext);
    // let isFav = false;
    // console.log(props.watchList);
    function isFav() {
       // check if current movie id is present in wishlist
       // return true if present else false;
-      for (let i = 0; i < props.watchList.length; i++) {
-         const movie = props.watchList[i];
+      for (let i = 0; i < watchList.length; i++) {
+         const movie = watchList[i];
          if (movie.id === id) {
             return true;
          }

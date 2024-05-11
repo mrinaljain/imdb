@@ -19,15 +19,15 @@ function Home(props) {
       if (pageNumber > 1)
       setPageNumber((oldPageNumber) => oldPageNumber - 1);
    }
-   let randomNumber = 0;
+   const randomNumberRef = React.useRef(0);
    React.useEffect(function () {
       fetch(baseUrl)
          .then(response => response.json())
          .then(data => {
             setMovies(data["results"]);
-            randomNumber = Math.floor(Math.random * data["results"].length);
+            randomNumberRef.current = Math.floor(Math.random * data["results"].length);
          });
-   }, [pageNumber]);
+   }, [baseUrl]);
 
    if (movies.length === 0) {
       return (<>
@@ -40,7 +40,7 @@ function Home(props) {
    }
    return (
       <>
-         {movies.length > 0 && <Banner movie={movies[randomNumber]} />}
+         {movies.length > 0 && <Banner movie={movies[0]} />}
          <Pagination 
             pageNumber={pageNumber} 
             increment={increment} 

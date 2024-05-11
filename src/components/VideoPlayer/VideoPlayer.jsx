@@ -11,7 +11,7 @@ function VideoPlayer({ onClose, movieId }) {
          .then(data =>
             setVideoId(data["results"][0].key)
          );
-   }, []);
+   }, [baseUrl]);
    return (
       <div className="modal">
          <div className="modal-content">

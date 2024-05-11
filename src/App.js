@@ -20,7 +20,7 @@ function App() {
     localStorage.setItem('watchList',JSON.stringify(updatedWatchList));
   }
   function deleteFromWatchList(movieObj) {
-    let updatedWatchList = watchList.filter((movie)=>movie[id] !== movieObj[id]
+    let updatedWatchList = watchList.filter((movie) => movie.id !== movieObj.id
     );    
     setWatchList(updatedWatchList);
     /// update to local storage for consistency
