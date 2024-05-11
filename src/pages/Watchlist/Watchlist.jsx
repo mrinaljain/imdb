@@ -8,7 +8,7 @@ function Watchlist(props) {
       <>
          <Filter/>
          <Search/>
-         <WatchlistMovies handelAddToWatchList={props.handelAddToWatchList} watchList={props.watchList} />
+         <WatchlistMovies />
       </>
    );
 }

@@ -47,8 +47,7 @@ function Home(props) {
             decrement={decrement} />
          <TrendingMovies 
             movies={movies} 
-            handelAddToWatchList={props.handelAddToWatchList} 
-            watchList={props.watchList} />
+         />
       </>
    );
 }

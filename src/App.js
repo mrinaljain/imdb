@@ -5,6 +5,7 @@ import Details from "./pages/Details/Details";
 import Home from "./pages/Home/Home";
 import HomeLayout from "./components/HomeLayout";
 import Watchlist from "./pages/Watchlist/Watchlist";
+import MovieContext from "./context/MovieContext";
 
 
 function App() {
@@ -19,20 +20,23 @@ function App() {
     localStorage.setItem('watchList',JSON.stringify(updatedWatchList));
   }
   function deleteFromWatchList(movieObj) {
-    let updatedWatchList = [movieObj, ...watchList];
+    let updatedWatchList = watchList.filter((movie)=>movie[id] !== movieObj[id]
+    );    
     setWatchList(updatedWatchList);
     /// update to local storage for consistency
     localStorage.setItem('watchList',JSON.stringify(updatedWatchList));
   }
 
   return (
+    <MovieContext.Provider value={{watchList, handelAddToWatchList, deleteFromWatchList}}>
     <Routes>
       <Route element={<HomeLayout />}>
-        <Route index element={<Home handelAddToWatchList={handelAddToWatchList} watchList={watchList} />} />
+        <Route index element={<Home />} />
         <Route path="details/:movieId" element={<Details />} />
-        <Route path="watchlist" element={<Watchlist handelAddToWatchList={handelAddToWatchList} watchList={watchList} />} />
+        <Route path="watchlist" element={<Watchlist />} />
       </Route>
     </Routes>
+    </MovieContext.Provider>
   );
 }
 

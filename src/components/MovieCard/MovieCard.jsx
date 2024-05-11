@@ -1,9 +1,11 @@
 import React from "react"
 import "./MovieCard.css"
 import { Link } from "react-router-dom";
+import MovieContext from "../../context/MovieContext";
 
 export default function MovieCard(props) {
    const { id, title, poster_path } = props.movie;
+   const {handelAddToWatchList, deleteFromWatchList } = React.useContext(MovieContext);
    // let isFav = false;
    // console.log(props.watchList);
    function isFav() {
@@ -24,8 +26,8 @@ export default function MovieCard(props) {
             <div className="movie-details">
                <h2>{title}</h2>
             <Link to={`/details/${id}`}><button>More Details</button></Link>
-            {isFav() ? <button>Remove from WatchList</button> 
-               : <button onClick={() => props.handelAddToWatchList(props.movie)}>Add to WatchList</button>}
+            {isFav() ? <button onClick={() => deleteFromWatchList(props.movie)}>Remove from WatchList</button> 
+               : <button onClick={() => handelAddToWatchList(props.movie)}>Add to WatchList</button>}
             </div>
       </div>
    );
