@@ -46,3 +46,11 @@ code {
   max-height: 100px;
   overflow-y: auto;
 }
+
+/* wishlist */
+
+.wishlist{
+  max-width: 75%;
+  margin-left:auto ;
+  margin-right: auto;
+}

@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <MovieContext.Provider value={{watchList, handelAddToWatchList, deleteFromWatchList}}>
+    <MovieContext.Provider value={{ watchList, setWatchList, handelAddToWatchList, deleteFromWatchList }}>
     <Routes>
       <Route element={<HomeLayout />}>
         <Route index element={<Home />} />
