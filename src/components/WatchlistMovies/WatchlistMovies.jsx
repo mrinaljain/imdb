@@ -1,6 +1,8 @@
 import React from "react";
 import WatchlistMovieCard from "../WatchlistMovieCard/WatchlistMovieCard";
 import MovieContext from "../../context/MovieContext";
+import Filter from "../../components/Filter/Filter";
+import "./WatchlistMovies.css"
 function WatchlistMovies(props) {
    const { watchList } = React.useContext(MovieContext);
    const [searchKeyword, setSearchKeyword] = React.useState("");
@@ -17,13 +19,23 @@ function WatchlistMovies(props) {
 
 
    return (<>
-      <center>
+      <div className="filterSection">
+         <Filter />
+         {/* <Search/> */}
          <input
             onChange={handleSearchInput}
             type="search"
             value={searchKeyword}
             placeholder="Search Here ..." />
-      </center>
+         <button
+            onclick="sortAscending()"
+            className="sort-buttons"
+         >Sort Ascending</button>
+         <button
+            onclick="sortDescending()"
+            className="sort-buttons"
+         >Sort Descending</button>
+      </div>
       <div className="wishlist">
          {watchListCards}
       </div>

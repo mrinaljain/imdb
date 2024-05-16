@@ -6,7 +6,7 @@ const Filter = () => {
    const { watchList, setWatchList } = React.useContext(MovieContext);
    const [searchParams, setSearchParams] = useSearchParams();
 
-   let filterGenre = searchParams.get("genre");
+   // let filterGenre = searchParams.get("genre");
 
    let genreList = watchList.map(movie => (
       <div
@@ -21,12 +21,13 @@ const Filter = () => {
          prevParams.set("genre", selectedGenre);
          return prevParams;
       })
-      setWatchList((oldWatchList) => {
-         let filteredWatchlist = oldWatchList.filter((movie) => {
-            return movie.genre_ids.includes(selectedGenre)
-         });
-         return filteredWatchlist;
-      });
+      //! TODO need to solve this problem  the list keeps on reducing if we directly setWatchlist everytime
+      // setWatchList((oldWatchList) => {
+      //    let filteredWatchlist = oldWatchList.filter((movie) => {
+      //       return movie.genre_ids.includes(selectedGenre)
+      //    });
+      //    return filteredWatchlist;
+      // });
    }
 
    return (
@@ -37,5 +38,5 @@ const Filter = () => {
       </div>
    );
 };
-
+// selected filter state
 export default Filter;
